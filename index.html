@@ -1,0 +1,93 @@
+<!--ESTRUCTURAS BÁSICAS HTML 5-->
+<!DOCTYPE html> <!-- Define la versión del html -->
+<html lang="en"> <!--Define el lenguaje-->
+    <head> 
+        <meta charset="UTF-8"> <!--meta son etiquetas que ayudan a definir ciertas características:
+        UTF-8 es el tipo de codificación, permite reconocer teclado latinoamericano-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Ayuda a poder decirle 
+        al navegador que se trabaja de manera responsiva-->
+        <title>Actosoft Web-Dev</title>
+    </head>
+    <body>
+        <h1> Hola mundo desde HTML 5 </h1> <!-- Son etiquetas de encabezado -->
+        <h2> Encabezado 2 </h2>
+        <h3> Encabezado 3 </h3>
+        <h4> Encabezado 4 </h4>
+        <h5> Encabezado 5 </h5>
+        <h6> Encabezado 6 </h6>
+
+        <p> 
+            Hola mi nombre es RRSG,
+            28 años, ingeniero geofísico con ganas de aprender a programar
+            por fin 
+        </p>
+        <p> Este no <b> Estoy en negritas </b> Este no </p> <!--<b> Pone texto en negritas-->
+        <br> <!--Es una etiqueta vacía: Deja un salto de página-->
+        <p> Este no <em> Estoy en cursivas </em> Este no </p> <!--<em> Pone texto en cursivas-->
+        <hr> <!-- Genera línea horizontal -->
+        <h2 id="image-block">Imágenes</h2>
+        <figure> 
+            <img src="img/aureola.jpeg" 
+            alt="Otra vez Aureola boreal" 
+            width="500" 
+            height="500">
+            <figcaption> Aureola Boreal con fotografía de larga exposición </figcaption>    
+        </figure>
+        <hr> 
+        <h2> Tipo de listas en HTML </h2>
+        <h4> Lista desordenadas </h4> <!--No tienen numeración sino viñetas(bullets)-->
+        <ul> 
+            <li> Opción 1 </li>
+            <li> Opción 2 </li>
+            <li> Opción 3 </li>    
+        </ul>
+        <h4> Lista ordenada </h4> <!-- Ya contienen un número dependiendo de su posición -->
+        <ol>
+            <li> Opción 1 </li>
+            <li> Opción 2 </li>
+            <li> Opción 3 </li>
+        </ol>
+        <h4> Listas de descripción </h4>
+        <dl> <!--Una descripción con lista, primero dt y después dd-->
+            <dt> Título 1 </dt> 
+            <dd> Descripción del título 1 </dd>
+            <dt> Título 2 </dt> 
+            <dd> Descripción del título 2 </dd>
+            <dt> Título 3 </dt> 
+            <dd> Descripción del título 3 </dd>
+        </dl>
+        <hr>
+        <h2> Hipervínculos </h2>
+        <a 
+            href="https://github.com/ragarsa"
+            target="_blank"> 
+            ¡Vamos a github! </a>
+        <br><a href="page2.html"> Ir a la otra página página HTML </a>
+        <br><a href="#image-block"> Ver imágenes </a> <!-- Se define un link con el id del mismo nombre que se define -->
+
+        <h2> Audio y Video </h2>
+            
+        <br><figure><audio controls
+            src="media/chopin.mp3"
+            >Música bonita</audio>
+            <figcaption> Música clásica </figcaption>
+        </figure>
+        <br><figure>
+                <video controls
+                src="media/atardecer.mp4" width="400" height="400"> Atardecer</video>
+                <figcaption> Atardecer en las nubes </figcaption>
+            </figure>
+
+        <br><figure>
+                <iframe width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/K__vzMmUtPc" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+                </iframe>
+                <figcaption> Calaca Jazz Band </figcaption>
+            </figure>
+
+    </body>
+</html>
