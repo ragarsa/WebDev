@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--FORMULARIO DE CONTACTO-->
+<body>
+
+    <header>
+
+    </header>
+
+    <main>
+        <h1> Ponte en contacto con nosotros </h1>
+        <form action="#" method="POST"><!--action: La dirección a donde se envía la información
+        Métodos HTTP:
+        GET: Visualiza o lee información cuando entramos páginas, pero también recibe información
+        POST: Se utiliza cuando queremos enviar datos al servidor, como formulario de contacto
+        PUT: Envía datos al servidor, por semántica solo para actualizar la información que ya está en servidor
+        DELETE: Cuando se elimnan datos del servidor-->
+            <div>
+                <label for="first-name"> Nombre: </label> <!--For es para identificar el label con el input-->
+                <!--Input: Etiqueta vacía, solo reenderiza al usuario, 
+                    buena práctica es que la etiqueta debe tener un nombre, como se identifica la etiqueta
+                    También ponerles id-->
+                    <input 
+                        type="text" 
+                        name="first-name" 
+                        id="first-name"
+                        placeholder="Escribe tu nombre"
+                        maxlength="20"
+                        > 
+            </div>
+            <br>
+            <div>
+                <label for="last-name"> Ingresa tu Apellido: </label> 
+                    <input 
+                        type="text" 
+                        name="last-name" 
+                        id="last-name"
+                        placeholder="Escribe tu apellido"
+                        maxlength="30"
+                        minlength="4"
+                        > 
+            </div>
+            <br>
+            <div>
+                <label for="email"> Correo Electrónico: </label>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="email">
+            </div>
+            <br>
+            <div>
+                <label for="age"> Ingresa tu edad: </label>
+                    <input 
+                        type="number" 
+                        name="age" 
+                        id="age"
+                        min="1"
+                        max="150"
+                        >
+            </div> 
+            <br>
+            <div>
+                <label for="gender"> Género: </label>
+                <select name="gender" id="gender"> <!--Etiqueta select permite generar una lista de opciones
+                con multiple se puede seleccionar varias opciones-->
+                    <option value="male">Masculino</option> <!--Value es el que se envía y Masculino lo que se muestra-->
+                    <option value="female"> Femenino </option>
+                    <option value="other" selected> Otro </option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="password"> Ingresa tu contraseña: </label>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        id="password"
+                        >
+
+            </div>
+            <br>
+            <div>
+                <p>Elige tu horario de atención</p>
+                <label for="id"> Matutino </label>
+                    <input 
+                        type="radio" 
+                        name="schedule"
+                        value="morning" 
+                        id="morning"
+                    >
+                
+                <label for="id"> Vespertino </label>
+                    <input 
+                        type="radio"
+                        name="schedule"
+                        value="evening"
+                        id="evening">
+            </div>
+            <br>
+
+            <div>
+                <p> Elige tus deportes favoritos </p>
+                <label for="futbol"> Futbol </label>
+                    <input 
+                        type="checkbox" 
+                        name="sports" 
+                        id="futbol"
+                        value="futbol">
+                <label for="basket"> Basketball </label>
+                    <input 
+                        type="checkbox"
+                        name="sports"
+                        id="basket"
+                        value="basket"
+                    >
+                <label for="tennis"> Tennis </label>
+                    <input 
+                        type="checkbox" 
+                        name="tennis" 
+                        id="tennis"
+                        value="tennis">
+
+            </div>
+            <br>
+            <div>
+                <label for="bio"> Biografía </label>
+                <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="file"> Sube tu archivo </label>
+                    <input type="file" name="file" id="file" accept=""> <!--Accept es para aceptar archivos específicos-->
+            </div>
+            <br>
+            <input type="submit" value="Enviar datos"> <!--Para activar el formulario debe ser un 
+            input de tipo submit-->
+            
+
+        </form>
+    </main>
+
+    
+
+
+    <footer>
+        <p> Curso-Actosoft -IIMAP Copyright 2020 </p>
+    </footer>
+</body>
+</html>
