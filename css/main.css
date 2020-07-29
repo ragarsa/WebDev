@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.main-text-container{
+    width: 100%;
+    text-align: center;
+    height: 100vh; /*Toma toda la pantalla, está leyendo 100% */
+    background-color: #474647;
+}
+
+.main-text{
+    margin: 0 auto; /*hace que se centre en bloque */
+    /*border: 2px dotted black ; ancho, dotted, color hexadecimal*/
+    text-align: center;
+    width: 60%;
+    background-color: tomato;
+    color: #ffff;
+    padding: 15px;
+    border-radius: 10 px;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+
+}
+.biography{
+    color: #80A1D4;
+    font-family: 'Cabin', sans-serif;
+    /*etiquetas responsivas */
+    font-size: 1.5em /*Em y rem: Medidas relativas dadas por porcentajes, depende del contenedor
+    si decimos 50% va a ser del padre (em), equivalente a 16 px y rem parte de eso para ser medida relativa, rem rootem
+    */;
+    font-weight: bolder;
+    text-align: center;
+    margin: 15vh 0;
+
+}
+
+.profile-photo{
+    width: 25vh;
+    border-radius: 50%;
+    border: 2px solid #80A1D4;
+}
