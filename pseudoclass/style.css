@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*Elimina los pixeles que están a la deriva, hacer que los pixeles sean más exactos*/
+}
+
+body{
+    font-family: font-family: 'Comfortaa', cursive;
+    /* font-size: 62.5% Rem que equivale a 10px, así se puede cambiar todo el documento a por ejemplo, si le quisieramos 
+    cambiar el padding a la clase pseudoclase, sería 5 rem */
+}
+
+main{
+    width: 100%; /*Este depende de que si hay elementos padres Ancho de la pantalla
+    vw: Se acomoda en la pantalla*/
+    height: 100%; /* min-height: La altura minima sea 100 vh vh: que ocupe el 100% de la pantalla que se esté viendo en el momento, es responsivo */
+    background-color: #005B9a;
+    padding: 50px; /*Espaciado alrededor*/
+}
+
+.positions{ /*El contenedor padre sería main*/
+    width: 100%;
+    height:50vh;
+    background-color: #0091f883;
+    position: relative;
+}
+
+.positions-item{
+    width: 100px;
+    height: 100px;
+    background-color: #0243d962;
+    border: 1px solid #0091f883;
+    font-size: 2em; /*Para textos se ocupan los em*/
+    color: #ffffff;
+    text-align: center;
+    display: inline-block; /*Forzamos a los elementos a que sean de tipo inline*/
+}
+
+/*PSEUDOCLASES
+BEFORE: 
+AFTER:
+necesario poner content: ''; */ 
+.positions-item::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 20px;
+    height: 50px;
+    background-color: #93d2ff;
+    transform: translateY(-50%); /* Transform translateY() */
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 50%); /* Recorta la figura a partir de coordenadas */
+}
+
+.positions-item::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 20px;
+    height: 70px;
+    background-color: #93d2ff;
+    transform: translateY(-50%); /* Transform translateY() */
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 50%);
+}
+
+.item-1{
+  /*  position: static;  Posición estática */   
+    position: relative;
+}
+
+.item-2{
+    position: relative;
+    top: 100px; /* Coordenadas donde se ubican los  elementos */
+    /*left: 100px;*/
+    /*right: -100px;*/
+    /*bottom: -100px;*/
+}
+
+.item-3{
+    position: absolute; /* no respeta el flujo de los componentes 
+    el padre debe tener position relative*/
+    top: 200px;
+    /*left: 100px;*/
+    /*right: -100px;*/
+    /*bottom: -100px;*/
+}
+
+.item-4{
+    /* El elemento se queda flotante, no importa donde.. Sirve para los menús */
+    position:fixed;
+    top: 25%;
+    right: 0; 
+
+    /*top: 100px;*/
+    /*left: 100px;*/
+    
+    /*bottom: -100px;*/
+}
+
+.pseudoclase{
+    width: 100%;
+    height: 50vh;
+    background-color: #4df38d;
+    padding: 50px;
+    margin-top: 50px;
+}
+
+#form{
+    background-color:  #117738;
+    padding: 2rem; /* rem es una medida que equivale a tantos pixeles, en este caso es un aproximado a 20px 
+    Un rem equivale a 16 px, si queremos que valga 10px, hacemos regla de tres, resultado 62.5*/
+    
+}
+#form legend{
+    color: white;
+    font-size: 1.5em; /*Para textos em es más genérico, se recomienda cuando hay una variaciṕn de equivalencia del rem*/
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#form .form-group{
+    color: #ffffff;
+    font-size: 1em;
+    margin: 10px;
+    text-align: center;
+
+}
+
+#form .form-group label{
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+
+}
+
+#form .form-group input{
+    width: 100%;
+    border: 3px solid transparent;
+    outline: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#form .form-group input:focus{ /*Exclusivo input interacción en ese momento*/
+    border: 3px solid red;
+}
+
+#form .form-group input:valid{ /* Exclusivo input interacción en ese momento*/
+    border: 3px solid rgb(64, 128, 248);
+}
+
+#form .form-group button{
+    width: 100%;
+    border: 0;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.2s;
+    
+}
+
+#form .form-group button:hover{
+    background-color: #10eb97;
+    color: #ffffff;
+    transform: translateY(-2px); /*se puede mover*/
+}
+
+#form .form-group a{
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+/*#form .form-group a:visited, pseudoselector visited
+#form .form-group a:link*/
+#form .form-group a:hover{ /*pseudoselector visited*/
+    color: #e93c3c;
+}
+
+/* Padre :nth-child() */
+
+.pseudoselectores{
+    width: 100%;
+    height: 60vh;
+    background-color: #fbff07;
+    padding: 50px;
+    margin-top: 50px;
+}
+
+/* Estilos del hijo :nth-child() */
+.pseudoselectores .child{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background-color: #acaf05;
+    color: whitesmoke;
+    text-align: center;
+    /*display: inline;  inline pone en un solo renglón todos */
+    transition: all 0.5s;
+}
+/* Estilos del padre pero que se ven reflejados en hijos(herencia) :nth-child() 
+    Puede recibir numero entero, odd, even, número entero+n*/
+
+.pseudoselectores .child:nth-child(odd):hover { /*Se le aplica al elemento 3. Se le va a pasar la herencia padres--->hijos*/
+    width: 100px;
+    transform: rotate(180deg) scale(1.5);
+    color: red
+}
+
+/*Toma el número contando de arriba hacia abajo 2-->5, 1-->6 4-->3
+.pseudoselectores .child:nth-last-child(2) {
+    width: 100px;
+}
+*/
+
+/*Similar a :nth-last-child() pero solo afecta las etiquetas iguales, en este caso div... 
+si ponemo un <p> en lugar de <div> en la clase 3, salta hasta el 4. 
+.pseudoselectores .child:nth-of-type(3) {
+    width: 100px;
+}
+*/
+
+/* .pseudoselectores .child:nth-last-of-type(4){
+    width: 100px;
+} */
+
+/*Se aplica siempre y cuando exista un hijo dentro del padre*/
+/* .pseudoselectores .child:only-child{
+    width: 100px;
+} */
+
+/*Se aplica solo a la etiqueta p ya que solo hay uno de ese tipo*/
+/*.pseudoselectores .child:only-of-type{
+    width:100%
+}*/
