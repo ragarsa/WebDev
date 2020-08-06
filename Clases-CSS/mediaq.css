@@ -1,0 +1,236 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Helvetica';
+    font-size: 62.5%;
+
+}
+
+section{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-device{
+    width: 90vw;
+    height: 90vh;
+    background-color: rgb(119, 119, 119);
+    color: #ffffff;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    border: 0.8rem solid black;
+    padding: 1rem;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.bg-blur{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-position: initial;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: blur(0.1rem) brightness(0.4) /*efecto borroso*/;
+
+}
+
+/* * Pantallas grandes * */
+@media(min-width: 1200px) {
+
+    .bg-blur{
+        background: url('/img/xlg.jpg')
+    }
+
+    .xsm,
+    .sm,
+    .md,
+    .lg {
+        display: none;
+    }
+
+    .my-device{
+        background: url('/img/xlg.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    
+    }
+}
+/**PANTALLAS DE LAPTOP **/
+@media(min-width: 992px) and (max-width: 1199px) {
+    
+    .xsm,
+    .sm,
+    .md,
+    .xlg {
+        display: none;
+    }
+
+    .my-device{
+        background: url('/img/lg.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .bg-blur{
+        background: url('/img/lg.jpg')
+    }
+
+    .my-device::after{
+        content: '';
+        width: 4rem;
+        height: 2rem;
+        background: black;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0.1rem;
+    }
+}
+ /**TABLETS **/
+
+ @media(min-width: 768px) and (max-width: 991px) {
+    
+    .xsm,
+    .sm,
+    .lg,
+    .xlg {
+        display: none;
+    }
+
+    .my-device{
+        background: url('/img/md.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .bg-blur{
+        background: url('/img/md.jpg')
+    }
+
+    .my-device::after{
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 10rem;
+        background: white;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.55rem;
+    }
+}
+/* Teléfonos grandes y tablets pero mas pequeño que una tablet standar */
+
+@media(min-width: 600px) and (max-width: 767px) {
+    
+    .xsm,
+    .md,
+    .lg,
+    .xlg {
+        display: none;
+    }
+
+    .my-device{
+        width: 60vw;
+        height: 95vh;
+        border: 0.7rem solid black;
+        padding: 1rem;
+        background: url('/img/sm.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .bg-blur{
+        background: url('/img/sm.jpg')
+    }
+
+    .my-device::after{
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 10rem;
+        background: white;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.55rem;
+    }
+}
+
+/** Teléfonos pequeños **/
+
+@media (max-width: 599px) {
+    
+    .sm,
+    .md,
+    .lg,
+    .xlg {
+        display: none;
+    }
+
+    .my-device{
+        width: 50vw;
+        height: 95vh;
+        border: 0.5rem solid black;
+        padding: 1rem;
+        color: black;
+        background: url('/img/xsm.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .bg-blur{
+        background: url('/img/xsm.jpg')
+    }
+    
+    .my-device::after{
+        content: '';
+        width: 7rem;
+        height: 1rem;
+        border-radius: 0 0 1rem 1rem;
+        background: black;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1rem;
+    }
+}
+
+@media (max-width: 599px) and (orientation: landscape){
+    .my-device{
+        width: 95vw;
+        height: 50vh;
+    }
+
+    .my-device::after{
+        position: absolute;
+        top: 47
+        %;
+        left: -2.1rem;
+        transform: translateY(40%) rotate(-90deg);
+    }
+}
+
+
+/*PARA MEDIA QUERY, recibe varios parámetros
+ width: Cuando esté en un rango haz algo
+ max-width, antes del rango*/
